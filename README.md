@@ -3,7 +3,7 @@
 ## 1.Download and install project
 
 ```sh {"id":"01HPQFP4CG8FJAQKFBEY4GWGHE"}
-git clone https://github.com/Shubnechkin-git/Toy-Warehouse-Information-Processing-System
+git clone https://github.com/Ramiladze/gggggg3
 cd Toy-Warehouse-Information-Processing-System
 npm i
 ```
