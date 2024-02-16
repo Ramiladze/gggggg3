@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Операции на складе</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Склад</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./toys.html">Игрушки</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./clients.html">Клиенты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./orders.html">Заказы</a>
+                    </li>
+                    <li class="nav-item active fw-bold">
+                        <a class="nav-link" href="./operations.html">Операции на складе</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./employ.html">Сотрудники</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Операции на складе</h1>
+        <table id="table">
+            <thead>
+                <tr>
+                    <th scope="col">Идентификатор</th>
+                    <th scope="col">Тип_операции</th>
+                    <th scope="col">Идентификатор_игрушки</th>
+                    <th scope="col">Количество_изменения</th>
+                    <th scope="col">Дата_операции</th>
+                    <th scope="col">Действия</th>
+                </tr>
+            </thead>
+            <tbody id="sqlTable" href="#editModal">
+                <!-- Здесь будут добавлены строки таблицы динамически -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Модальное окно для подтверждения удаления -->
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmDeleteModalLabel">Подтвердите удаление</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Вы уверены, что хотите удалить эту запись?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Нет</button>
+                    <button type="button" class="btn btn-primary" id="confirmDeleteButton">Да</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Редактирование</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="newValueInput">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary" id="saveChangesButton">Сохранить изменения</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="successContainer">
+
+        </div>
+        <div id="errorContainer">
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="./../js/send.js"></script>
+    <script src="./../js/edit.js"></script>
+    <script src="./../js/delete.js"></script>
+    <script src="./../js/add.js"></script>
+</body>
+
+</html>
