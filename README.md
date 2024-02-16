@@ -4,7 +4,7 @@
 
 ```sh {"id":"01HPQFP4CG8FJAQKFBEY4GWGHE"}
 git clone https://github.com/Ramiladze/gggggg3
-cd Toy-Warehouse-Information-Processing-System
+cd gggggg3
 npm i
 ```
 
